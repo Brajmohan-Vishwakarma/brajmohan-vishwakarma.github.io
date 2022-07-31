@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+ *{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+input[type=text], select {
+  width: 100%;
+  padding:14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+  display: block;
+}
+  @media only screen and (max-width: 705px){
+    div{
+      width: 100%;
+    }
+  }
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  </head>
+<body>
+<div>
+  <h2>Payment Form - Ajay</h2>
+  <form action="POST" name="google-sheet"> 
+    <label for="Date_Paid">Date Paid</label>
+    <input type="text" id="Date_Paid" name="Date_Paid" placeholder="Date Paid">
+
+    <label for="Paid">Amount Paid</label>
+    <input type="text" id="Paid" name="Paid" placeholder="Amount Paid">
+
+    <label for="Reason_Paid">Reason Paid</label>
+    <input type="text" id="Reason_Paid" name="Reason_Paid" placeholder="Reason Paid">
+    
+    <label for="Date_Recevied">Date Recevied</label>
+    <input type="text" id="Date_Recevied" name="Date_Recevied" placeholder="Date Recevied">
+
+    <label for="Recevied">Recevied</label>
+    <input type="text" id="Recevied" name="Recevied" placeholder="Recevied">
+
+   <label for="Reason_Recevied">Reason Recevied</label>
+    <input type="text" id="Reason_Recevied" name="Reason_Recevied" placeholder="Reason Recevied">
+    
+     <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx59HCj3JFvJ3INsX6nEF6ggPPmKomLMne6XCNn81rZKPErTOJ8YnZtWvj5TAMpcw-4Ow/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Your Payment Report is Captured Succesfuly!!!!!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+
+</body>
+</html>
