@@ -51,8 +51,8 @@ div {
   </head>
 <body>
 <div>
-  <h2>Payment Form - Ajay</h2>
-  <form action="POST" name="google-sheet"> 
+  <h3>Payment Form-Ajay</h3>
+  <form method="POST" name="google-sheet"> 
     <label for="Date_Paid">Date Paid</label>
     <input type="text" id="Date_Paid" name="Date_Paid" placeholder="Date Paid">
 
@@ -77,7 +77,7 @@ div {
 
 
           <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbx59HCj3JFvJ3INsX6nEF6ggPPmKomLMne6XCNn81rZKPErTOJ8YnZtWvj5TAMpcw-4Ow/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyeP3Zy6QA4XZij3EKfPSxCg3lM2PtasTBWGMbJPkb7IdvR5lZ8w8v571nS-dkAZGhP/exec'
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
